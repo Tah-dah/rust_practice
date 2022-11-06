@@ -1,9 +1,8 @@
-fn no_space(x : String) -> String{
-    x.replace(" ", "").trim().to_string()
+//determines if string needs to be plural based on float size
+fn plural (n: f64) -> bool {
+    n != 1.0
 }
 
 fn main() {
-    let string_x = "8 j 8   mBliB8g  imjB8B8  jl  B";
-    println!("{}", no_space(string_x.to_string()));
 
 }
