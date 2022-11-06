@@ -1,17 +1,9 @@
-//match numberof peddels returns phrase 
-
-fn how_much_i_love_you(nb_petals: u16) -> &'static str {
+fn invert(mut values: Vec<i32>) -> Vec<i32> {
+    values.iter().map(|x| x * -1).collect()
     
-    match nb_petals % 6u16 {
-        1 => "I love you",
-        2 => "a little",
-        3 => "a lot",
-        4 => "passionately",
-        5 => "madly",
-        _ => "not at all",
-    }
 }
 
 fn main() {
-   
+   let  vec = vec![1,2,3,4,5,6,7,8,9];
+   println!("{:?}", invert(vec));
 }
