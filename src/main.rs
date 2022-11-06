@@ -1,6 +1,6 @@
-//determines if string needs to be plural based on float size
-fn plural (n: f64) -> bool {
-    n != 1.0
+//dna to rna codewars 
+fn dna_to_rna(dna: &str) -> String {
+    dna.replace("T", "U")
 }
 
 fn main() {
