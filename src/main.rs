@@ -1,9 +1,17 @@
-fn invert(mut values: Vec<i32>) -> Vec<i32> {
-    values.iter().map(|x| x * -1).collect()
-    
+fn quarter_of(month: u8) -> u8 {
+    match month {
+        1..=3 => 1,
+        4..=6 => 2,
+        7..=9 => 3,
+        10..=12 => 4,
+        _=> 0
+        
+    }
 }
 
 fn main() {
-   let  vec = vec![1,2,3,4,5,6,7,8,9];
-   println!("{:?}", invert(vec));
+    println!("{:?}",quarter_of(3));
+    println!("{:?}",quarter_of(12));
+    println!("{:?}",quarter_of(5));
+    println!("{:?}",quarter_of(6));
 }
