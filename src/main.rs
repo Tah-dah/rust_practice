@@ -1,10 +1,11 @@
-fn add_five(x: i32) -> i32 {
-    x+5
+fn combat(health: f32, damage: f32) -> f32 {
+    let result = if health - damage > 0.0 { health - damage } else { 0.0 };
+    return result
 }
 
 fn main() {
-    println!("{:?}",add_five(3));
-    println!("{:?}",add_five(12));
-    println!("{:?}",add_five(5));
+    println!("{:?}",combat(100.0, 5.0));
+    
+    println!("{:?}",combat(20.0, 30.0));
     
 }
