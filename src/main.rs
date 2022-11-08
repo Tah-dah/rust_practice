@@ -1,11 +1,11 @@
-fn combat(health: f32, damage: f32) -> f32 {
-    let result = if health - damage > 0.0 { health - damage } else { 0.0 };
-    return result
+// Define a function "square" here which takes a signed integer of type i32
+// and returns the square of that integer
+fn square(num: i32) -> i32 {
+    num * num
 }
 
 fn main() {
-    println!("{:?}",combat(100.0, 5.0));
-    
-    println!("{:?}",combat(20.0, 30.0));
+    println!("{:?}", square(1));
+    println!("{:?}", square(5));
     
 }
