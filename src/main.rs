@@ -1,11 +1,11 @@
-// Define a function "square" here which takes a signed integer of type i32
-// and returns the square of that integer
-fn square(num: i32) -> i32 {
-    num * num
+
+fn usdcny(usd: u16) -> String {
+
+    (f64::from(usd) * 6.75).to_string() + " Chinese Yuan"
 }
 
 fn main() {
-    println!("{:?}", square(1));
-    println!("{:?}", square(5));
+    println!("{:?}", usdcny(15));
+    println!("{:?}", usdcny(465));
     
 }
