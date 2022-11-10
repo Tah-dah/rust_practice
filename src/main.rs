@@ -1,7 +1,7 @@
 
-fn usdcny(usd: u16) -> String {
-
-    (f64::from(usd) * 6.75).to_string() + " Chinese Yuan"
+fn usdcny(usd: u16) -> String
+{
+   format!("{:.2} Chinese Yuan", f64::from(usd) * 6.75)
 }
 
 fn main() {
