@@ -1,10 +1,6 @@
 
 fn arr(n: usize) -> Vec<u32> {
-    let mut arr:Vec<u32> = vec![];
-    for s in 0..n as u32 {
-        arr.push(s)
-    }
-    arr
+    (0 .. n as u32).collect()
 }
 fn main() {
    
