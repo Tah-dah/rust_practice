@@ -1,5 +1,5 @@
-fn litres(t: f64) -> i32 {
-    t as i32 / 2
+fn derive(coefficient: u32, exponent: u32) -> String {
+    format!("{}x^{}", coefficient * exponent, exponent - 1)
 }
 fn main() {
    
@@ -7,12 +7,7 @@ fn main() {
 }
 
 #[test]
-    fn example_tests() {
-        assert_eq!(litres(2.), 1);
-        assert_eq!(litres(1.4), 0);
-        assert_eq!(litres(12.3), 6);
-        assert_eq!(litres(0.82), 0);
-        assert_eq!(litres(11.8), 5);
-        assert_eq!(litres(1787.), 893);
-        assert_eq!(litres(0.), 0);
-    }
+fn test_basics() {
+    assert_eq!(derive(7, 8), "56x^7");
+    assert_eq!(derive(5, 9), "45x^8");
+}
