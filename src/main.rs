@@ -1,13 +1,22 @@
-fn derive(coefficient: u32, exponent: u32) -> String {
-    format!("{}x^{}", coefficient * exponent, exponent - 1)
+fn each_cons(arr: &[u8], n: usize) -> Vec<Vec<u8>> {
+    arr.windows(n).map(Vec::from).collect()
 }
 fn main() {
    
     
 }
 
+fn dotest(arr: &[u8], n: usize, expected: Vec<Vec<u8>>) {
+    assert_eq!(each_cons(arr, n), expected, "{ERR_MSG} with arr = {arr:?}, n = {n}")   
+}
+
+
 #[test]
-fn test_basics() {
-    assert_eq!(derive(7, 8), "56x^7");
-    assert_eq!(derive(5, 9), "45x^8");
+fn sample_tests() {
+    let arr = &[3, 5, 8, 13];
+    let empty_vec: Vec<Vec<u8>> = Vec::new();
+    dotest(arr, 1, vec![vec![3], vec![5], vec![8], vec![13]]);
+    dotest(arr, 2, vec![vec![3,5], vec![5,8], vec![8,13]]);
+    dotest(arr, 3, vec![vec![3,5,8], vec![5,8,13]]);
+    dotest(&vec![], 3,  empty_vec);
 }
