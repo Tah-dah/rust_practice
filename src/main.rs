@@ -1,22 +1,19 @@
-fn each_cons(arr: &[u8], n: usize) -> Vec<Vec<u8>> {
-    arr.windows(n).map(Vec::from).collect()
-}
+fn goals(a: i32, b: i32, c: i32) -> i32 {
+    a + b + c
+  }
 fn main() {
    
     
 }
 
-fn dotest(arr: &[u8], n: usize, expected: Vec<Vec<u8>>) {
-    assert_eq!(each_cons(arr, n), expected, "{ERR_MSG} with arr = {arr:?}, n = {n}")   
+fn dotest(a: i32, b: i32, c: i32, expected: i32) {
+    let actual = goals(a, b, c);
+    assert!(actual == expected, 
+        "With la_liga_goals = {a}, champions_league_goals = {b}, copa_del_rey_goals = {c}\nExpected {expected} but got {actual}")
 }
 
-
 #[test]
-fn sample_tests() {
-    let arr = &[3, 5, 8, 13];
-    let empty_vec: Vec<Vec<u8>> = Vec::new();
-    dotest(arr, 1, vec![vec![3], vec![5], vec![8], vec![13]]);
-    dotest(arr, 2, vec![vec![3,5], vec![5,8], vec![8,13]]);
-    dotest(arr, 3, vec![vec![3,5,8], vec![5,8,13]]);
-    dotest(&vec![], 3,  empty_vec);
+fn test_goals() {
+    dotest(0, 0, 0, 0);
+    dotest(43, 10, 5, 58);
 }
