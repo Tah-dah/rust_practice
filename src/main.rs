@@ -1,19 +1,21 @@
-fn goals(a: i32, b: i32, c: i32) -> i32 {
-    a + b + c
+fn abbrev_name(name: &str) -> String {
+    name.split(' ')
+        .map(|x| x.chars().nth(0).unwrap().to_string().to_uppercase())
+        .collect::<Vec<_>>()
+        .join(".")
   }
 fn main() {
    
     
 }
 
-fn dotest(a: i32, b: i32, c: i32, expected: i32) {
-    let actual = goals(a, b, c);
-    assert!(actual == expected, 
-        "With la_liga_goals = {a}, champions_league_goals = {b}, copa_del_rey_goals = {c}\nExpected {expected} but got {actual}")
-}
+
 
 #[test]
-fn test_goals() {
-    dotest(0, 0, 0, 0);
-    dotest(43, 10, 5, 58);
-}
+fn sample_tests() {
+    assert_eq!(abbrev_name("Sam Harris"), "S.H");
+    assert_eq!(abbrev_name("Patrick Feenan"), "P.F");
+    assert_eq!(abbrev_name("Evan Cole"), "E.C");
+    assert_eq!(abbrev_name("P Favuzzi"), "P.F");
+    assert_eq!(abbrev_name("David Mendieta"), "D.M");
+  }
