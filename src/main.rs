@@ -1,5 +1,8 @@
 fn boolean_to_string(b: bool) -> String {
-    b.to_string()
+    match b {
+        true => String::from("true"),
+        false => String::from("false")
+    }
 }
 fn main() {
    
