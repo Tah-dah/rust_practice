@@ -1,9 +1,10 @@
-fn boolean_to_string(b: bool) -> String {
-    match b {
-        true => String::from("true"),
-        false => String::from("false")
-    }
-}
+fn guess_blue(blue_start: u32, red_start: u32, blue_pulled: u32, red_pulled: u32) -> f32 {                                          
+    let blue = blue_start - blue_pulled;                                                                                            
+    let red = red_start - red_pulled;                                                                                               
+    let total = blue + red;                                                                                                         
+    (blue as f32 / total as f32)                                                                                           
+}                                                                                                                                   
+    
 fn main() {
    
     
@@ -12,8 +13,8 @@ fn main() {
 
 
 #[test]
-fn example() {
-    assert_eq!(boolean_to_string(true), "true", "When we pass in true, we want the string \"true\" as output");
-    assert_eq!(boolean_to_string(false), "false", "When we pass in false, we want the string \"false\" as output");
-    assert_eq!(boolean_to_string(false), "false", "When we pass in false, we want the string \"false\" as output");
-}
+fn basic_tests() {
+    assert_eq!(guess_blue(5, 5, 2, 3), 0.6);
+    assert_eq!(guess_blue(5, 7, 4, 3), 0.2);
+    assert_eq!(guess_blue(12, 18, 4, 6), 0.4);
+  }}
