@@ -1,5 +1,5 @@
-fn square_sum(vec: Vec<i32>) -> i32 {
-    vec.iter().map(|s| s * s).sum()
+fn greet() -> &'static str {
+    "hello world!"
 }
 
 fn main() {
@@ -10,9 +10,6 @@ fn main() {
 
 
 #[test]
-fn returns_expected() {
-    assert_eq!(square_sum(vec![1, 2]), 5);
-    assert_eq!(square_sum(vec![-1, -2]), 5);
-    assert_eq!(square_sum(vec![5, 3, 4]), 50);
-    
-    }
+fn test_greets_the_world() {
+    assert_eq!(greet(), "hello world!", "should return the correct message");
+}
