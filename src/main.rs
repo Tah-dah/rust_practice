@@ -1,5 +1,5 @@
-fn set_alarm(employed: bool, vacation: bool) -> bool {
-    employed && !vacation
+fn bin_to_decimal(inp: &str) -> i32 {
+    i32::from_str_radix(inp, 2).unwrap()
 }
 
 fn main() {
@@ -9,15 +9,9 @@ fn main() {
 
 
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_set_alarm() {
-        assert_eq!(set_alarm(true, true), false, "Fails when input is true, true");
-        assert_eq!(set_alarm(false, true), false, "Fails when input is false, true");
-        assert_eq!(set_alarm(false, false), false, "Fails when input is false, false");
-        assert_eq!(set_alarm(true, false), true, "Fails when input is true, false");
-    }
+#[test]
+fn test_bin_to_decimal() {
+    assert_eq!(bin_to_decimal("0"), 0);
+    assert_eq!(bin_to_decimal("1"), 1);
+    assert_eq!(bin_to_decimal("1001001"), 73);
 }
